@@ -20,6 +20,8 @@ public class UserConfiguration:IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(255)
             .HasAnnotation("Password", true);
+        builder.Property(tmp => tmp.UserRole)
+            .IsRequired();
 
         builder.ToTable(tmp =>
         {
