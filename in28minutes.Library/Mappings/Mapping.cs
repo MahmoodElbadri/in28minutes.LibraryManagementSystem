@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using in28minutes.Library.DTOs;
 using Library.DTOs;
 using Library.Models;
 
@@ -15,5 +16,9 @@ public class Mapping : Profile
         CreateMap<Category, CategoryUpdateRequest>().ReverseMap();
         CreateMap<Category, CategoryAddRequest>().ReverseMap();
         CreateMap<Category, CategoryResponse>().ReverseMap();
+
+        CreateMap<User,UserAddRequest>().ReverseMap();
+        CreateMap<User,UserUpdateRequest>().ReverseMap();
+        CreateMap<User,UserResponse>().ReverseMap();
     }
 }
