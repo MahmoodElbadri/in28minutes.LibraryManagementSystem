@@ -22,8 +22,8 @@ public class UnitOfWork : IUnitOfWork
     }
 
 
-    public void Save()
+    public async void SaveChangesAsync()
     {
-        _db.SaveChanges();
+       await _db.SaveChangesAsync();
     }
 }

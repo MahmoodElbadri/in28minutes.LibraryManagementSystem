@@ -7,5 +7,5 @@ public interface IUnitOfWork
     IBookRepository BookRepository { get; }
     ICategoryRepository CategoryRepository { get; }
     IUserService<User> UserService { get; }
-    void Save();
+    void SaveChangesAsync();
 }
