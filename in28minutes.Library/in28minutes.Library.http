@@ -1,0 +1,6 @@
+@in28minutes.Library_HostAddress = http://localhost:5116
+
+GET {{in28minutes.Library_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
