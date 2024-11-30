@@ -35,16 +35,6 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-
-                var context = services.GetRequiredService<ApplicationDbContext>();
-                var seedService = services.GetRequiredService<ISeedDataService>();
-
-                context.Database.Migrate(); // Ensure the database is up to date
-                seedService.Initialize(context); // Seed the data
-            }
         }
 
 
