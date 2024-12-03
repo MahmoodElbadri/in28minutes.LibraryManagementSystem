@@ -1,4 +1,3 @@
-```markdown
 # In28Minutes.Library
 
 This project is a library management system that demonstrates the use of modern .NET Core web API development practices.
@@ -85,16 +84,28 @@ This project is a library management system that demonstrates the use of modern 
 
 ### Steps
 1. Clone the repository:
-
+    ```sh
+    git clone <repository-url>
+    cd In28Minutes.Library
+    ```
 
 2. Configure your connection string in `appsettings.json`:
-
+    ```json
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=your_server_name;Database=your_database_name;User Id=your_user_id;Password=your_password;"
+    }
+    ```
 
 3. Apply migrations and seed data:
-
+    ```sh
+    dotnet ef database update
+    dotnet run SeedData
+    ```
 
 4. Run the application:
-
+    ```sh
+    dotnet run
+    ```
 
 ---
 
