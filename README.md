@@ -1,7 +1,7 @@
 Here is a sample `README.md` file tailored for the structure of your project:
 
 ```markdown
-# In28Minutes.Library
+#In28Minutes.Library
 
 This project is a library management system that demonstrates the use of modern .NET Core web API development practices. It is designed as part of a learning exercise and serves as a practical example of implementing a clean architecture with essential features such as user authentication, book management, category management, and more.
 
