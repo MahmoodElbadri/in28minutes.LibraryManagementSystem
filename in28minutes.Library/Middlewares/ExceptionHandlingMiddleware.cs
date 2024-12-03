@@ -29,8 +29,8 @@ public class ExceptionHandlingMiddleware
                 _logger.LogError("{ExceptionType} {ExceptionMessage}", ex.GetType().ToString(), ex.Message);
             }
 
-            //httpContext.Response.StatusCode = 500;
-            //await httpContext.Response.WriteAsync("Error occurred");
+            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            await httpContext.Response.WriteAsync("An unexpected error occurred. Please try again later.");
 
             throw;
         }
@@ -46,4 +46,4 @@ public static class ExceptionHandlingMiddlewareExtensions
 }
 
 
-}
+
