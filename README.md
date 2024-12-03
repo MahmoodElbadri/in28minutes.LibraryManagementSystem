@@ -1,133 +1,105 @@
-Here is a sample `README.md` file tailored for the structure of your project:
-
 ```markdown
-#In28Minutes.Library
+# In28Minutes.Library
 
-This project is a library management system that demonstrates the use of modern .NET Core web API development practices. It is designed as part of a learning exercise and serves as a practical example of implementing a clean architecture with essential features such as user authentication, book management, category management, and more.
+This project is a library management system that demonstrates the use of modern .NET Core web API development practices.
 
 ---
 
 ## Features
 
-###   Core Functionalities  
--   User Authentication  :
+### **Core Functionalities**
+- **User Authentication**:
   - Secure login and registration endpoints through the `AuthController`.
--   Book Management  :
+- **Book Management**:
   - CRUD operations for books via the `BooksController`.
--   Category Management  :
+- **Category Management**:
   - Manage categories associated with books through the `CategoriesController`.
--   User Management  :
+- **User Management**:
   - Administrative functions for managing users through the `UsersController`.
 
-###   Middleware  
--   Exception Handling Middleware  :
+### **Middleware**
+- **Exception Handling Middleware**:
   - Provides centralized error logging using Serilog and ensures meaningful error responses.
 
-###   Database Management  
--   Entity Framework Core  :
+### **Database Management**
+- **Entity Framework Core**:
   - `ApplicationDbContext` for database interaction.
   - Migrations are managed for schema changes.
--   Seed Data  :
+- **Seed Data**:
   - Preloads the database with necessary data using `SeedDataExtension`.
 
-###   Repository Pattern  
+### **Repository Pattern**
 - Follows the repository pattern for abstracting data access:
   - `BookRepository`, `CategoryRepository`, and `UserService` handle core database operations.
   - `UnitOfWork` ensures transactional integrity.
 
-###   Automated Mapping  
--   AutoMapper  :
+### **Automated Mapping**
+- **AutoMapper**:
   - Simplifies object-to-object mapping for DTOs and entities with mapping profiles defined in `Mappings/Mapping.cs`.
 
 ---
 
 ## Project Structure
 
-###   Controllers  
--   `BooksController`  : Handles all API endpoints related to books.
--   `CategoriesController`  : Manages categories for books.
--   `UsersController`  : Administrative endpoints for managing users.
--   `AuthController`  : Manages authentication and authorization.
+### **Controllers**
+- **`AuthController`**: Manages user authentication and registration.
+- **`BooksController`**: Handles CRUD operations for books.
+- **`CategoriesController`**: Manages book categories.
+- **`UsersController`**: Administrative endpoints for user management.
 
-###   Data  
--   `ApplicationDbContext`  : Manages EF Core database connections.
--   Seed Data  : Extension for populating initial data.
+### **Data**
+- **`ApplicationDbContext`**: The EF Core database context for managing database interactions.
+- **Seed Data**: Extension methods to populate the database with initial data.
 
-###   Middlewares  
--   `ExceptionHandlingMiddleware`  : Logs errors and provides a centralized exception handling mechanism.
+### **Middlewares**
+- **`ExceptionHandlingMiddleware`**: Handles exceptions globally and logs errors using Serilog.
 
-###   Models  
--   `Book`  : Represents book entities.
--   `Category`  : Represents book categories.
--   `User`  : Represents user data with authentication roles.
+### **Models**
+- **`Book`**: Represents book entities.
+- **`Category`**: Represents book categories.
+- **`User`**: Represents user accounts and roles.
 
-###   Repositories  
--   Interfaces  : Define contracts for all repository operations.
-  - `IBookRepository`, `ICategoryRepository`, and `IUserService`.
--   Implementations  : Concrete classes handling database operations.
+### **Repositories**
+- **Interfaces**: Define contracts for database operations:
+  - `IBookRepository`, `ICategoryRepository`, `IUserService`.
+- **Implementations**: Provide actual database handling:
   - `BookRepository`, `CategoryRepository`.
+- **`UnitOfWork`**: Ensures transactional integrity.
 
 ---
 
 ## Technology Stack
 
--   .NET Core 8  : Backend framework for building RESTful APIs.
--   Entity Framework Core  : Object-relational mapping (ORM) for database operations.
--   AutoMapper  : Library for object-to-object mapping.
--   SQL Server  : Backend database for data storage.
+- **.NET Core 8**: Backend framework for building RESTful APIs.
+- **Entity Framework Core**: ORM for managing database interactions.
+- **AutoMapper**: For efficient mapping of models to DTOs.
+- **SQL Server**: Relational database for data persistence.
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-1.   Install .NET 8 or 9 SDK  .
-2.   SQL Server  : Ensure you have access to an SQL Server instance.
+1. **Install .NET 8 SDK**.
+2. Set up **SQL Server** for the database.
 
 ### Steps
 1. Clone the repository:
 
 
-2. Configure your database connection in `appsettings.json`:
+2. Configure your connection string in `appsettings.json`:
 
 
 3. Apply migrations and seed data:
 
 
-4. Run the project:
+4. Run the application:
 
-
-5. Use a tool like Postman to interact with the API endpoints.
-
----
-
-## API Endpoints
-
-###   Authentication  
-- `POST /api/auth/login`: Log in with existing credentials.
-- `POST /api/auth/register`: Register a new user.
-
-###   Books  
-- `GET /api/books`: Retrieve all books (Admin only).
-- `GET /api/books/{id}`: Retrieve a specific book by ID.
-- `POST /api/books`: Create a new book (Admin only).
-- `PUT /api/books/{id}`: Update an existing book (Admin only).
-- `DELETE /api/books/{id}`: Delete a book (Admin only).
-
-###   Categories  
-- `GET /api/categories`: Retrieve all categories.
-- `POST /api/categories`: Add a new category (Admin only).
 
 ---
 
 ## Contributions
 
-Contributions are welcome! Feel free to fork this repository and submit a pull request with your improvements.
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+Contributions are welcome! Feel free to fork this repository and submit a pull request for any improvements.
 
 ---
