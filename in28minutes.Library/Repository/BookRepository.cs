@@ -13,8 +13,9 @@ public class BookRepository : Repository<Book>, IBookRepository
         _db = db;
     }
 
-    public void Update(Book book)
+    public void UpdateAsync(Book book)
     {
-        _db.Update(book);
+        _db.Books.Update(book);  // Updates the book entity
+        _db.SaveChanges();  // Save the changes to the database asynchronously
     }
 }

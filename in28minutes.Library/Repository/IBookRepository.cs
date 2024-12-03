@@ -7,5 +7,5 @@ using Library.Repository;
 /// </summary>
 public interface IBookRepository:IRepository<Book>
 {
-    void Update(Book book);
+    void UpdateAsync(Book book);
 }
