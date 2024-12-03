@@ -5,7 +5,7 @@ using Library.Repository;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
-public interface IBookRepository:IRepository<Book>
+public interface IBookRepository : IRepository<Book>
 {
-    void UpdateAsync(Book book);
+    Task<Book> UpdateAsync(Book book);
 }

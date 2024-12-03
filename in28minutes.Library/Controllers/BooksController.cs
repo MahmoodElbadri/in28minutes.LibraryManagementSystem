@@ -77,12 +77,25 @@ public class BooksController : ControllerBase
         var updatedBook = _mapper.Map(bookUpdateRequest, existingBook);
 
         // Update the book asynchronously
-        _unitOfWork.BookRepository.UpdateAsync(updatedBook);
+        var book = await _unitOfWork.BookRepository.UpdateAsync(updatedBook);
 
         // Map the updated book to a response DTO
-        
+        var bookResponse = _mapper.Map<BookResponse>(book);
 
-        return Ok();  // Return the updated book
+        return Ok(bookResponse);  // Return the updated book
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBook(Guid id)
+    {
+        Book? book = await _unitOfWork.BookRepository.GetAsync(tmp=>tmp.Id==id);
+        if(book == null)
+        {
+            return NotFound();
+        }
+        await _unitOfWork.BookRepository.RemoveAsync(book);
+        _unitOfWork.SaveChangesAsync();
+        return NoContent();
     }
 
 }
