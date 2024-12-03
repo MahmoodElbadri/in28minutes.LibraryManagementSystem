@@ -1,5 +1,6 @@
 
 using in28minutes.Library.Helpers;
+using in28minutes.Library.Middlewares;
 using in28minutes.Library.Repository;
 using in28minutes.Library.Services;
 using Library.Data;
@@ -37,10 +38,9 @@ public class Program
             app.UseSwaggerUI();
         }
 
-
+        app.UseExceptionHandlingMiddleware();
+        app.UseRouting();
         app.UseAuthorization();
-
-
         app.MapControllers();
 
         app.Run();
