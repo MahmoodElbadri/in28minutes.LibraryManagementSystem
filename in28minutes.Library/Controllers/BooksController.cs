@@ -24,7 +24,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMIN")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllBooks()
     {
         _logger.LogInformation("Fetching all books from the database.");
@@ -35,7 +35,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "ADMIN")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetBookId(Guid id)
     {
         _logger.LogInformation("Fetching book with ID: {BookId}", id);

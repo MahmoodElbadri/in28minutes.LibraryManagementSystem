@@ -7,5 +7,5 @@ using Library.Repository;
 /// </summary>
 public interface ICategoryRepository:IRepository<Category>
 {
-	void Update(Category category);
+	 Task<Category> UpdateAsync(Category category);
 }

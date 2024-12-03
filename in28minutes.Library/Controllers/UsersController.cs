@@ -26,7 +26,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles = "ADMIN")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllUsers()
     {
         var users = await _unitOfWork.UserService.GetAllAsync();
@@ -91,7 +91,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = "ADMIN")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetUserById(Guid id)
     {
         var user = await _unitOfWork.UserService.GetByIdAsync(id);
